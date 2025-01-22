@@ -1,6 +1,9 @@
 from pathlib import Path
 import os
+import environ
 
+env = environ.Env()
+# env.read_env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
@@ -48,7 +51,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'core.wsgi.application'
+WSGI_APPLICATION = 'core.wsgi.app'
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -75,3 +78,6 @@ USE_I18N = True
 USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATIC_URL = 'static/'
+# MEDIA_URL='media/'
+STATIC_ROOT = os.path.join(Path(__file__).resolve().parent.parent.parent, 'staticfiles', 'static')

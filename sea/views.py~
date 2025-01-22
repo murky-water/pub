@@ -1,0 +1,21 @@
+from django.shortcuts import render
+from .models import *
+from django.views import generic
+from django.http import HttpResponse
+import pdb
+
+def index(request):
+    context = {
+        'number_of_hotels':Hotel.objects.all().count(),
+        'locations_list':City.objects.all(),
+    }
+    # pdb.set_trace()
+
+    return render (request, "sea/home.html", context)
+
+
+def searchResponse(request,keyword):
+    pdb.set_trace()
+    loc_list=City.objects.filter(name__contains="keyword")
+    response = HttpResponse(loc_list, content_type="application/json")
+    return response

@@ -1,0 +1,7 @@
+:root {
+    --bs-dropdown-border-radius:0 !important;
+}
+
+:dropdown{
+    right:0;
+}

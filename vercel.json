@@ -15,11 +15,11 @@
     }
   ],
   "routes": [
-    {
 	{
       "src": "/static/(.*)",
       "dest": "core/static/$1"
     },
+	{
       "src": "/(.*)",
       "dest": "core/wsgi.py"
     }

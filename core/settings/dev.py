@@ -1,10 +1,7 @@
 from .base import *
-import environ
 
-env = environ.Env()
-environ.Env.read_env()
 DEBUG = True
-
+env.read_env()
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -12,6 +9,7 @@ DATABASES = {
         'USER': env('DB_USERNAME'),
         'PASSWORD': env('DB_PASS'),
         'HOST': env('DB_HOST'),
+        'PORT': env('DB_PORT'),
     }
 }
 

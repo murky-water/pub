@@ -2,8 +2,10 @@ from pathlib import Path
 import os
 import environ
 
+
 env = environ.Env()
-# env.read_env()
+env.read_env()
+SECRET_KEY = env('SECRET_KEY')
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
@@ -13,6 +15,18 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'static/')]
 STATIC_ROOT = os.path.join(BASE_DIR,'static/')
 SECURE_CROSS_ORIGIN_OPENER_POLICY = None
 
+
+DEBUG = True
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST'),
+        'PORT': env('DB_PORT'),
+    }
+}
 FIXTURE_DIRS=[
     os.path.join(BASE_DIR,'fixtures/')
 ]

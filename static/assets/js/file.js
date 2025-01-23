@@ -1,16 +1,19 @@
-
-document.addEventListener("click",function dismissMenu(e){
+function dismissMenu(e){
     document.getElementById("search_ul").classList.add("d-none");
-})
+}
+document.addEventListener("click",dismissMenu)
 function drawSearchResult(arr){
-        const parser = new DOMParser();
+    if(arr.length==0)
+	dismissMenu(null)
+    else
+    {const parser = new DOMParser();
     const ul = document.getElementById("search_ul");
     ul.textContent='';
     for (const i of arr) {
 	const str = '<li class="mb-1">					           <img src="'+i.image+'" class="me-2" width=50px height=50px>                                  <div class="fs-5 align-items-center">                    '+i.name+'                  </div>                </li>';	
 	const doc = parser.parseFromString(str, 'text/html');
 			const el = doc.body.firstChild;
-	ul.appendChild(el);
+	ul.appendChild(el);}
 	
     }
 }

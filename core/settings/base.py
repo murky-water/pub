@@ -7,7 +7,15 @@ env = environ.Env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
+STATIC_URL = 'static/'
+# MEDIA_URL='media/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static/')]
+STATIC_ROOT = os.path.join(BASE_DIR,'static/')
 SECURE_CROSS_ORIGIN_OPENER_POLICY = None
+
+FIXTURE_DIRS=[
+    os.path.join(BASE_DIR,'fixtures/')
+]
 
 ALLOWED_HOSTS = ['a.com','0.0.0.0', 'localhost', '127.0.0.1','.vercel.app', '.now.sh']
 
@@ -76,7 +84,4 @@ USE_I18N = True
 USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-STATIC_URL = 'static/'
-# MEDIA_URL='media/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'static/')]
-STATIC_ROOT = os.path.join(BASE_DIR,'static/')
+

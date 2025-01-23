@@ -2,6 +2,7 @@ function dismissMenu(e){
     document.getElementById("search_ul").classList.add("d-none");
 }
 document.addEventListener("click",dismissMenu)
+
 function drawSearchResult(arr){
     if(arr.length==0)
 	dismissMenu(null)
@@ -22,6 +23,7 @@ function showMenu(e) {
       e.stopPropagation();
 }
 document.getElementById("location").addEventListener ("input", searchData);
+// document.getElementById("location").addEventListener ("search", searchData);
 async function searchData(e) {
     showMenu(e)
     type=e.target.id;

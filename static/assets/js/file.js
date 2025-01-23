@@ -14,14 +14,13 @@ function drawSearchResult(arr){
 	
     }
 }
-document.getElementById("location").addEventListener ("click",
 function showMenu(e) {
-    
     document.getElementById("search_ul").classList.remove("d-none");
       e.stopPropagation();
-});
+}
 document.getElementById("location").addEventListener ("input", searchData);
 async function searchData(e) {
+    showMenu(e)
     type=e.target.id;
     keyword=e.target.value;
   const url = "search?type="+type+"&keyword="+keyword;

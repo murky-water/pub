@@ -4,3 +4,4 @@ DB_HOST=localhost
 DB_NAME=tech
 DB_USERNAME=hihihi
 DB_PASS=heyjoo00
+DB_PORT=

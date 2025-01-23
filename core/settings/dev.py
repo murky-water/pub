@@ -1,15 +1,14 @@
 from .base import *
 
+SECRET_KEY = 'secret_of_my_life'
 DEBUG = True
-env.read_env()
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USERNAME'),
-        'PASSWORD': env('DB_PASS'),
-        'HOST': env('DB_HOST'),
-        'PORT': env('DB_PORT'),
+        'NAME': 'tech',
+        'USER': 'hihihi',
+        'PASSWORD': 'heyjoo00',
+        'HOST': 'localhost'
     }
 }
 

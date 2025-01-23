@@ -1,7 +1,0 @@
-SECRET_KEY='secre'
-DB_ENGINE=postgresql
-DB_HOST=aws-0-ap-southeast-1.pooler.supabase.com
-DB_NAME=postgres
-DB_USERNAME=postgres.raooctpthxrubohjjeff
-DB_PASS=ks6OD5JlqWaFoHvg
-DB_PORT=6543
